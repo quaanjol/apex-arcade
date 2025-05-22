@@ -1,0 +1,39 @@
+<template>
+  <div class="slds-grid slds-gutters">
+    <div class="slds-col slds-size_3-of-5 rounded">
+      <div class="container">
+        <h1 class="heading-1">Apex Arcade Games</h1>
+        <div class="d-flex align-items-center">
+          <template for:each={games} for:item="game">
+            <div key={game.Id} class="mr-16px cursor-pointer">
+              <div class="d-grid game-grid" onclick={handleOpenGame} data-id={game.Id}>
+                <img src={game.Image} alt={game.Name} class="game-thumbnail border">
+                <b style="margin-top: 8px;">{game.Name}</b>
+              </div>
+            </div>
+          </template>
+        </div>
+        <div style="margin-top: 8px;" class="text-center">
+          <template lwc:if={showLoadMore}>
+            <button class="slds-button slds-button_success" disabled={loadingGames} onclick={handleLoadMoreGames}>
+              {loadingText}
+            </button>
+          </template>
+        </div>
+      </div>
+    </div>
+    <template lwc:if={games.length}>
+      <div class="slds-col slds-size_2-of-5">
+        <div class="container">
+          <h2 class="heading-2">Game Leaderboard</h2>
+          <div>
+            <c-games-leaderboard games={games}></c-games-leaderboard>
+          </div>
+        </div>
+      </div>
+    </template>
+  </div>
+  <template lwc:if={chosenGame}>
+    <c-game-preview game={chosenGame} onclosegame={handleCloseGame}></c-game-preview>
+  </template>
+</template>

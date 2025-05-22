@@ -1,0 +1,25 @@
+<template>
+	<!-- lets make a snake game -->
+	<div class="container">
+		<div class="slds-p-around--medium">
+			<h1>Apex Arcade - Snake Game</h1>
+			<div class="slds-m-bottom--medium">
+				<lightning-button-group>
+					<lightning-button variant="success" label={playMusicButtonLabel} icon-name="utility:listen"
+						onclick={handlePlayMusic}></lightning-button>
+					<lightning-button variant="brand" label={startButtonLabel} icon-name={playButtonIcon}
+						onclick={toggleStartGame}></lightning-button>
+				</lightning-button-group>
+			</div>
+			<div class="slds-m-bottom--medium">
+				<p>Points: {points}</p>
+				<p>Highest Point: {highestPoint}</p>
+			</div>
+			<div class={mapContainerClass}>
+				<template for:each={mapRowsArr} for:item="row">
+					<div class={row.classes} data-index={row.index} data-row={row.row} data-col={row.col} key={row.index}></div>
+				</template>
+			</div>
+		</div>
+	</div>
+</template>

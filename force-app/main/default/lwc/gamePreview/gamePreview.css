@@ -1,0 +1,33 @@
+.game-thumbnail {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.game-thumbnail:hover {
+  opacity: 0.6;
+}
+
+.d-grid  {
+  display: grid;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.border {
+  border: 1px solid #dee2e6 !important;
+}
+
+.text-danger {
+  color: #dc3545!important;
+}

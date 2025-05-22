@@ -1,0 +1,78 @@
+<template>
+  <template lwc:if={games.length}>
+    <div class="slds-p-around_medium lgc-bg">
+      <lightning-select label="Games" value={chosenGame} options={gameOptions}
+        onchange={handleChangeGame}></lightning-select>
+    </div>
+  </template>
+  <table class="slds-table slds-table_bordered slds-table_cell-buffer slds-table_striped">
+    <thead>
+      <tr class="slds-line-height_reset">
+        <th class="" scope="col">
+          <div class="slds-truncate" title="Rank">Rank</div>
+        </th>
+        <th class="" scope="col">
+          <div class="slds-truncate" title="Player">Player</div>
+        </th>
+        <th class="" scope="col">
+          <div class="slds-truncate" title="Score">Level</div>
+        </th>
+        <th class="" scope="col">
+          <div class="slds-truncate" title="Score">Score</div>
+        </th>
+        <th class="" scope="col">
+          <div class="slds-truncate" title="Score">Date</div>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <template lwc:if={showPoints}>
+        <template for:each={points} for:item="point">
+          <tr class="slds-hint-parent" key={point.Id}>
+            <th scope="row">
+              <div class="slds-truncate">{point.rank}</div>
+            </th>
+            <td>
+              <div class="slds-truncate">
+                <div class="d-flex flex-wrap align-items-center">
+                  <div>
+                    <img src={point.Avatar__c} alt={point.Player_Name__c}
+                      style="width: 32px; aspect-ratio: 1; object-fit: cover; object-position: top; border-radius: 50%; margin-right: 8px;"
+                      class="border">
+                  </div>
+                  <div>
+                    {point.Player_Name__c}
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td>
+              <div class="slds-truncate">{point.Level__c}</div>
+            </td>
+            <td>
+              <div class="slds-truncate">
+                <lightning-formatted-number value={point.Points__c}
+                  maximum-fraction-digits="2"></lightning-formatted-number>
+              </div>
+            </td>
+            <td>
+              <div class="slds-truncate">{point.date}</div>
+            </td>
+          </tr>
+        </template>
+      </template>
+      <template lwc:else>
+        <p style="text-align: center; padding: 4px;">
+          No points found.
+        </p>
+      </template>
+    </tbody>
+  </table>
+  <template lwc:if={showLoadMore}>
+    <div style="margin-top: 8px;" class="text-center">
+      <button class="slds-button slds-button_success" disabled={loadingPoints} onclick={handleLoadMorePoints}>
+        {loadingText}
+      </button>
+    </div>
+  </template>
+</template>

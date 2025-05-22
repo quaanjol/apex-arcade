@@ -1,0 +1,17 @@
+<apex:page showHeader="false" title="Apex Arcade Website" cache="false">
+    <apex:includeLightning />
+
+    <div id="apexArcadeApp"></div>
+    <script>
+      $Lightning.use("c:ApexArcadeApplication", function() {
+        $Lightning.createComponent(
+          "c:apexArcadeHomepage",
+          {},
+          "apexArcadeApp",
+          function(cmp) {
+            console.log("Apex Arcade app is Loaded...");
+          }
+        );
+      });
+    </script>
+</apex:page>

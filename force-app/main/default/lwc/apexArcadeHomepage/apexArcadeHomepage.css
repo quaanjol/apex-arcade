@@ -1,0 +1,37 @@
+.loadingSpinnerContainer {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 3;
+}
+
+.container {
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+.slds-context-bar {
+  height: 72px;
+}
+
+.site_logo {
+  width: 64px;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 8px;
+  margin-top: 2.5px;
+}
+
+.bg-white {
+  background: #ffffff;
+}
+
+.rounded {
+  border-radius: 0.25rem;
+}

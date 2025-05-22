@@ -1,0 +1,52 @@
+<template>
+  <template lwc:if={showSpinner}>
+    <div class="loadingSpinnerContainer d-flex align-items-center justify-content-center">
+      <div class="loadingSpinner">
+        <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+      </div>
+    </div>
+  </template>
+  <div class="container">
+    <div class="slds-context-bar">
+      <div class="slds-context-bar__primary">
+        <div
+          class="slds-context-bar__item slds-context-bar__dropdown-trigger slds-dropdown-trigger slds-dropdown-trigger_click slds-no-hover">
+          <div>
+            <img src={siteLogo} alt="apex_arcade" class="site_logo" />
+          </div>
+          <span class="slds-context-bar__label-action slds-context-bar__app-name">
+            <span class="slds-truncate" title={appName}>{appName}</span>
+          </span>
+        </div>
+      </div>
+      <nav class="slds-context-bar__secondary" role="navigation">
+        <ul class="slds-grid">
+          <template for:each={menus} for:item="menu">
+            <li class={menu.classes} key={menu.id}>
+              <a href={menu.url} class="slds-context-bar__label-action" title={menu.label}>
+                <span class="slds-truncate" title={menu.label}>{menu.label}</span>
+              </a>
+            </li>
+          </template>
+        </ul>
+      </nav>
+    </div>
+    <div class="slds-p-around_medium">
+      <template lwc:if={isHomePage}>
+        <div class="bg-white slds-p-around_medium rounded">
+          Welcome to Apex Arcade.
+        </div>
+      </template>
+      <template lwc:if={isGamePage}>
+        <div>
+          <c-game-boy-container></c-game-boy-container>
+        </div>
+      </template>
+      <template lwc:if={isGamePlay}>
+        <div class="bg-white rounded">
+          <c-game-detail ontogglehomespinner={handleToggleSpinner}></c-game-detail>
+        </div>
+      </template>
+    </div>
+  </div>
+</template>

@@ -1,0 +1,19 @@
+<template>
+  <template lwc:if={firstLoad}>
+    <template lwc:if={isGameReady}>
+      <template lwc:if={isSnakeGame}>
+        <c-snake-game ontogglehomespinner={handleToggleSpinner}></c-snake-game>
+      </template>
+    </template>
+    <template lwc:else>
+      <div class="slds-p-around--medium">
+        This game is not ready yet.
+      </div>
+    </template>
+  </template>
+  <template lwc:else>
+    <div class="slds-p-around--medium">
+      Game loading...
+    </div>
+  </template>
+</template>
