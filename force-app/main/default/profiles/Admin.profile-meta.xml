@@ -45,6 +45,81 @@
         <field>Game_Point__c.Points__c</field>
         <readable>true</readable>
     </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Google_Setting__mdt.Value__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Youtube_Channel__c.Batch_Videos__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Youtube_Channel__c.Channel_ID__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Youtube_Channel__c.Channel_Thumbnail_Image__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Youtube_Channel__c.Channel_Thumbnail__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Youtube_Channel__c.Channel_URL__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Youtube_Channel__c.Comments_Pool__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Youtube_Channel__c.Daily_Batch__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Youtube_Channel__c.Description__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Youtube_Channel__c.Google_OAuth_URL__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Youtube_Channel__c.Handle_Encoded__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Youtube_Channel__c.Handle__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Youtube_Channel__c.Refresh_Token__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Youtube_Channel__c.Token_Refreshed_At__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Youtube_Channel__c.Token__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
 
     <objectPermissions>
         <allowCreate>true</allowCreate>
@@ -64,6 +139,15 @@
         <object>Game_Point__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>Youtube_Channel__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
 	
 	<tabVisibilities>
         <visibility>DefaultOn</visibility>
@@ -72,5 +156,9 @@
 	<tabVisibilities>
         <visibility>DefaultOn</visibility>
         <tab>Game_Point__c</tab>
+    </tabVisibilities>
+	<tabVisibilities>
+        <visibility>DefaultOn</visibility>
+        <tab>Youtube_Channel__c</tab>
     </tabVisibilities>
 </Profile>

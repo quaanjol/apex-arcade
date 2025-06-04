@@ -1,0 +1,21 @@
+<apex:page controller="GoogleTokenController" action="{!sendGoogleData}">
+    {!message}
+    <script>
+    	let redirect = '{!redirect}';
+    	if(redirect == '1') {
+        	window.location.href = '{!finalAuthUrl}';
+        }
+    
+    	let channelId = '{!channelId}';
+    	if(channelId) {
+        	localStorage.setItem('channelId', channelId);
+        } else {
+            let code = '{!code}';
+            let channelIdAgain = localStorage.getItem('channelId');
+            if(code && localStorage.getItem('channelId')) {            
+                localStorage.removeItem('channelId');
+                window.location.href = window.location.href + '&channelId=' + channelIdAgain;
+            }
+        }    	
+    </script>
+</apex:page>
