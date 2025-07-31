@@ -1,0 +1,18 @@
+.result-box {
+	border: 1px solid #d8dde6;
+	background-color: #f9f9f9;
+	padding: 1rem;
+	min-height: 150px;
+	border-radius: .25rem;
+	white-space: pre-wrap;
+}
+
+.preview-image {
+	width: 240px;
+	border: 1px solid #d8dde6;
+}
+
+.preview-image:hover {
+	cursor: pointer;
+	border: 1px solid #d8dde6;
+}

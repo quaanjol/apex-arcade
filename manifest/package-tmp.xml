@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
-        <members>YoutubeHelper</members>
-        <members>GetYoutubeChannelInfoFromFlow</members>
-        <members>YoutubeChannelResponse</members>
+        <members>ocrCmp</members>
+        <members>geminiOcrCmp</members>
+        <name>LightningComponentBundle</name>
+    </types>
+    <types>
+        <members>GeminiImageOCR</members>
+        <members>GeminiImageRequest</members>
         <name>ApexClass</name>
     </types>
     <version>62.0</version>

@@ -1,0 +1,24 @@
+.preview {
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	margin-top: 0.5rem;
+}
+
+.json-container {
+	background-color: #1e1e1e;
+	color: #f1f1f1;
+	font-family: 'Courier New', monospace;
+	font-size: 0.85rem;
+	padding: 1rem;
+	border-radius: 6px;
+	border: 1px solid #444;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	position: relative;
+	max-height: 400px;
+}
+
+.json-header {
+	color: #90cdf4;
+	font-size: 0.9rem;
+}

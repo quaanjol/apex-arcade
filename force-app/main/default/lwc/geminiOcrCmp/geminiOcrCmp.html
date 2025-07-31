@@ -1,0 +1,47 @@
+<template>
+  <div class="container">
+    <lightning-card title="Gemini OCR" icon-name="utility:image">
+      <div class="slds-p-around_medium">
+        <div class="slds-grid slds-wrap">
+          <!-- LEFT COLUMN -->
+          <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+            <lightning-input type="file" label="Upload Image" accept="image/*"
+              onchange={handleFileChange}></lightning-input>
+
+            <template if:true={imagePreviewUrl}>
+              <div class="slds-m-top_medium">
+                <p><strong>Preview:</strong></p>
+                <img src={imagePreviewUrl} alt="Image Preview" class="preview" style="width: 100%; max-width: 280px;" />
+              </div>
+            </template>
+
+            <div class="slds-m-top_medium">
+              <lightning-button variant="brand" label="Extract Text with Gemini" onclick={handleExtractText}
+                disabled={disableButton}></lightning-button>
+            </div>
+
+            <template if:true={errorMessage}>
+              <div class="slds-text-color_error slds-m-top_medium">
+                {errorMessage}
+              </div>
+            </template>
+          </div>
+
+          <!-- RIGHT COLUMN -->
+          <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-p-left_medium">
+            <template if:true={resultJson}>
+              <div class="json-container">
+                <div class="json-header slds-grid slds-grid_align-spread slds-p-bottom_x-small">
+                  <span><strong>JSON Result</strong></span>
+                  <lightning-button-icon icon-name="utility:copy" alternative-text="Copy JSON" onclick={handleCopyJson}
+                    variant="border-filled" title="Copy to clipboard"></lightning-button-icon>
+                </div>
+                <pre>{resultJson}</pre>
+              </div>
+            </template>
+          </div>
+        </div>
+      </div>
+    </lightning-card>
+  </div>
+</template>

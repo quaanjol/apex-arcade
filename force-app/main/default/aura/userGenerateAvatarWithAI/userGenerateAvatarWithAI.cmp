@@ -1,0 +1,48 @@
+<aura:component
+  implements="flexipage:availableForRecordHome,force:hasRecordId"
+  controller="UserAvatarGenerateController"
+  access="global"
+>
+  <!-- attributes -->
+  <aura:attribute name="prompt" type="String" />
+  <aura:attribute name="imageSource" type="String" />
+  <aura:attribute name="isLoading" type="Boolean" default="false" />
+  <aura:attribute name="isImageUrl" type="Boolean" default="false" />
+
+  <aura:if isTrue="{!v.isLoading}">
+    <div> <lightning:spinner alternativeText="Loading" size="medium" /> </div>
+  </aura:if>
+
+  <lightning:card title="Avatar Generator" iconName="utility:image">
+    <div class="slds-m-around--medium">
+      <lightning:textarea
+        name="image-prompt"
+        label="Image prompt"
+        value="{!v.prompt}"
+      />
+      <div class="slds-m-top--medium">
+        <lightning:button
+          variant="brand"
+          label="Generate"
+          onclick="{!c.handleGenerateImage}"
+        />
+      </div>
+      <aura:if isTrue="{! v.imageSource != null }">
+        <div class="slds-m-top--medium">
+          <img
+            src="{!v.imageSource}"
+            alt="avatar-generated-by-AI"
+            style="width: 280px;"
+          />
+          <div class="slds-m-top--medium">
+            <lightning:button
+              variant="success"
+              label="Set as avatar"
+              onclick="{!c.handleSetAvatarImage}"
+            />
+          </div>
+        </div>
+      </aura:if>
+    </div>
+  </lightning:card>
+</aura:component>

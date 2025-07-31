@@ -1,0 +1,37 @@
+<template>
+  <lightning-card title="OCR with Tesseract.js" icon-name="utility:scan">
+    <div class="slds-p-around_medium">
+      <!-- File Uploader -->
+      <lightning-input type="file" accept="image/png, image/jpeg, image/gif" label="Upload Image"
+        onchange={handleFileChange}>
+      </lightning-input>
+
+      <!-- Image preview -->
+      <template if:true={imageFilePreview}>
+        <div class="slds-m-top_medium">
+          <img src={imageFilePreview} alt="Image Preview" class="preview-image" />
+        </div>
+      </template>
+
+      <!-- Status Message -->
+      <div class="slds-m-top_medium slds-m-bottom_medium">
+        <p><strong>Status:</strong> {statusMessage}</p>
+      </div>
+
+      <!-- Process Button -->
+      <lightning-button variant="brand" label="Extract Text" title="Extract Text" onclick={handleProcessClick}
+        disabled={isProcessing} class="slds-m-top_medium">
+      </lightning-button>
+
+      <!-- Result Section -->
+      <template if:true={extractedText}>
+        <div class="slds-m-top_large">
+          <h3 class="slds-text-heading_medium slds-m-bottom_small">Extracted Text</h3>
+          <div class="result-box">
+            <pre>{extractedText}</pre>
+          </div>
+        </div>
+      </template>
+    </div>
+  </lightning-card>
+</template>
